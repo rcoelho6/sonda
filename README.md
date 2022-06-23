@@ -78,5 +78,5 @@ Com isso as dependências serão baixadas e a API subirá na porta `8080`;
 - Aqui você pode usar o Postman, por exemplo, ou o curl como abaixo:
 
 ```bash
-curl -X POST http://localhost:8080/planet-with-probes -H 'Content-Type: application/json' -d '{"width":10,"height":10,"probes":[{"x":1,"y":2,"direction":"N","commands": "LMLMLMLMM"},{"x":3,"y":3,"direction":"E","commands": "MMRMMRMRRM"}]}'
+curl -X POST http://localhost:8080/planetModel-with-probeModels -H 'Content-Type: application/json' -d '{"width":10,"height":10,"probeModels":[{"x":1,"y":2,"direction":"N","commands": "LMLMLMLMM"},{"x":3,"y":3,"direction":"E","commands": "MMRMMRMRRM"}]}'
 ```

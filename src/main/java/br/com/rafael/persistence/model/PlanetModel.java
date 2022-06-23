@@ -1,6 +1,6 @@
-package br.com.elo7.sonda.candidato.model;
+package br.com.rafael.persistence.model;
 
-public class Planet {
+public class PlanetModel {
 	private int id;
 	private int width;
 	private int height;
@@ -12,8 +12,8 @@ public class Planet {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof Planet) {
-			return ((Planet) obj).id == this.id;
+		if (obj instanceof PlanetModel) {
+			return ((PlanetModel) obj).id == this.id;
 		}
 		return false;
 	}
