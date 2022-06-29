@@ -1,6 +1,6 @@
-package br.com.rafael.domain;
+package br.com.rafael.domains;
 
-import br.com.rafael.persistence.model.PlanetModel;
+import br.com.rafael.persistences.models.PlanetModel;
 
 import java.util.List;
 
@@ -9,19 +9,6 @@ public class Planet {
     private int width;
     private int height;
     private List<Probe> probes;
-
-    @Override
-    public int hashCode() {
-        return id;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof PlanetModel) {
-            return ((Planet) obj).id == this.id;
-        }
-        return false;
-    }
 
     public int getId() {
         return id;
@@ -38,9 +25,6 @@ public class Planet {
     public int getHeight() {
         return height;
     }
-    public void setHeight(int height) {
-        this.height = height;
-    }
 
     public List<Probe> getProbes() {
         return probes;
@@ -48,5 +32,18 @@ public class Planet {
 
     public void setProbes(List<Probe> probes) {
         this.probes = probes;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof PlanetModel) {
+            return ((Planet) obj).id == this.id;
+        }
+        return false;
     }
 }

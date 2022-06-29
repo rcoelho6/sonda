@@ -2,7 +2,7 @@ package br.com.rafael.usercases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import br.com.rafael.persistence.model.ProbeModel;
+import br.com.rafael.persistences.models.ProbeModel;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

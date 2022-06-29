@@ -1,6 +1,6 @@
-package br.com.rafael.controller;
+package br.com.rafael.controllers;
 
-import br.com.rafael.controller.dto.OutputDto;
+import br.com.rafael.controllers.dtos.OutputDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.rafael.controller.dto.InputDTO;
+import br.com.rafael.controllers.dtos.InputDTO;
 import br.com.rafael.usercases.ProbeUserCase;
 
 @Controller

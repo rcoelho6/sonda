@@ -1,10 +1,9 @@
 package br.com.rafael.usercases;
 
-import br.com.elo7.sonda.candidato.domain.*;
-import br.com.rafael.domain.CommandEnum;
-import br.com.rafael.domain.DirectionEnum;
-import br.com.rafael.domain.Planet;
-import br.com.rafael.domain.Probe;
+import br.com.rafael.domains.enums.CommandEnum;
+import br.com.rafael.domains.enums.DirectionEnum;
+import br.com.rafael.domains.Planet;
+import br.com.rafael.domains.Probe;
 import org.springframework.stereotype.Service;
 
 import com.google.common.annotations.VisibleForTesting;
@@ -27,7 +26,8 @@ public class ProbeUserCase {
 		planet.setId(id);
 		convertAndMoveProbes(planet);
 		planet.getProbes().forEach(probe -> {
-			probesPort.save(probe);
+			var probeId = probesPort.save(probe);
+			probe.setId(probeId);
 		});
 		return planet;
 	}
@@ -43,77 +43,17 @@ public class ProbeUserCase {
 	}
 
 	@VisibleForTesting
-	void applyCommandToProbe(Probe probeModel, char command) {
+	void applyCommandToProbe(Probe probe, char command) {
 		switch (CommandEnum.valueOf(command)) {
 			case RIGHT:
-				turnProbeRight(probeModel);
+				probe.turnRight();
 				break;
 			case LEFT:
-				turnProbeLeft(probeModel);
+				probe.turnLeft();
 				break;
 			case MOVE:
-				moveProbeForward(probeModel);
+				probe.move();
 				break;
 		}
-	}
-
-	private void moveProbeForward(Probe probe) {
-		int newX = probe.getX();
-		int newY = probe.getY();
-		switch (probe.getDirection()) {
-			case NORTH:
-				newY++;
-				break;
-			case WEST:
-				newX--;
-				break;
-			case SOUTH:
-				newY--;
-				break;
-			case EAST:
-				newX++;
-				break;
-		}
-		probe.setX(newX);
-		probe.setY(newY);
-	}
-
-	private void turnProbeLeft(Probe probe) {
-		var newDirection = DirectionEnum.NORTH;
-		switch (probe.getDirection()) {
-			case NORTH:
-				newDirection = DirectionEnum.WEST;
-				break;
-			case WEST:
-				newDirection = DirectionEnum.SOUTH;
-				break;
-			case SOUTH:
-				newDirection = DirectionEnum.EAST;
-				break;
-			case EAST:
-				newDirection = DirectionEnum.NORTH;
-				break;
-		}
-		probe.setDirection(newDirection);
-	}
-	
-	private void turnProbeRight(Probe probe) {
-		var newDirection = DirectionEnum.NORTH;
-		switch (probe.getDirection()) {
-			case NORTH:
-				newDirection = DirectionEnum.EAST;
-				break;
-			case EAST:
-				newDirection = DirectionEnum.SOUTH;
-				break;
-			case SOUTH:
-				newDirection = DirectionEnum.WEST;
-				break;
-			case WEST:
-				newDirection = DirectionEnum.NORTH;
-				break;
-		}
-		System.out.println(newDirection);
-		probe.setDirection(newDirection);
 	}
 }

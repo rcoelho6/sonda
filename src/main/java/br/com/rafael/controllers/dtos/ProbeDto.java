@@ -1,7 +1,7 @@
-package br.com.rafael.controller.dto;
+package br.com.rafael.controllers.dtos;
 
-import br.com.rafael.domain.DirectionEnum;
-import br.com.rafael.domain.Probe;
+import br.com.rafael.domains.enums.DirectionEnum;
+import br.com.rafael.domains.Probe;
 
 public class ProbeDto {
 	private int x; 

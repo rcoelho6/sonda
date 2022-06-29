@@ -1,4 +1,4 @@
-package br.com.rafael.domain;
+package br.com.rafael.domains.enums;
 
 public enum DirectionEnum {
     NORTH('N'),

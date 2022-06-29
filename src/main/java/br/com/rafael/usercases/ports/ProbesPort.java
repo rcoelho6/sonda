@@ -1,13 +1,8 @@
 package br.com.rafael.usercases.ports;
 
-import java.util.Optional;
-
-import br.com.rafael.domain.Probe;
+import br.com.rafael.domains.Probe;
 
 public interface ProbesPort {
 
-	void save(Probe probe);
-
-	Optional<Probe> findById(int id);
-
+	int save(Probe probe);
 }

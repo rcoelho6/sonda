@@ -1,4 +1,4 @@
-package br.com.rafael.persistence.model;
+package br.com.rafael.persistences.models;
 
 public class PlanetModel {
 	private int id;

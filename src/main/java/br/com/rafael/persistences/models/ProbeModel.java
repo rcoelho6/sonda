@@ -1,6 +1,6 @@
-package br.com.rafael.persistence.model;
+package br.com.rafael.persistences.models;
 
-import br.com.rafael.domain.DirectionEnum;
+import br.com.rafael.domains.enums.DirectionEnum;
 
 public class ProbeModel {
 	private int id;

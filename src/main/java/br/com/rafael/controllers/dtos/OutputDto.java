@@ -1,6 +1,6 @@
-package br.com.rafael.controller.dto;
+package br.com.rafael.controllers.dtos;
 
-import br.com.rafael.domain.Planet;
+import br.com.rafael.domains.Planet;
 
 import java.util.List;
 import java.util.stream.Collectors;
